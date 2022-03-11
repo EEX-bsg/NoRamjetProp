@@ -1,6 +1,6 @@
 # NoRamjetProp
 
-[日本語版はこちら]()
+[日本語版はこちら](https://github.com/EEX-bsg/NoRamjetProp/blob/main/README-JP.md)
 ## Overview
 ![png](https://i.gyazo.com/80fff9139f856812f1cf1847edde0067.png)  
 This is a Besiege mod that disable the ramjet propeller.
@@ -24,7 +24,7 @@ EEX-bsg
 [twitter](https://twitter.com/EEX_bsg)
 
 ## Licence
-[MIT]()
+[MIT](https://github.com/EEX-bsg/NoRamjetProp/blob/main/LICENCE)
 
 ### Last updated
 2022/3/11
