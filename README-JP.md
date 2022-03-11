@@ -24,7 +24,7 @@ EEX-bsg
 [twitter](https://twitter.com/EEX_bsg)
 
 ## ライセンス
-[MIT]()
+[MIT](https://github.com/EEX-bsg/NoRamjetProp/blob/main/LICENCE)
 
 ### 最終更新日
 2022/3/11
