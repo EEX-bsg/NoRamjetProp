@@ -32,18 +32,29 @@ namespace NoRamjetPropNS
             propController = base.GetComponent<PropellorController>();//既存のプロペラコントローラーを取得
             liftNormalRot = new Vector3(0, 0, propController.upTransform.localEulerAngles.z);//ペラの水平角度を持ってくる Fで反転するから固定値ではダメ
             propController.AxisDrag = new Vector3(0, 0, 0);//既存プロペラコントローラーの空気抵抗をゼロにする
+            Debug.Log("start");
         }
         public void FixedUpdate()
         {
-            if(StatMaster.levelSimulating)
+            if(StatMaster.levelSimulating)//シミュレートをしているとき
             {
-                if(isFirstFrame)
+                if(isFirstFrame)//最初のフレームはスキップした方が良いらしい(少なくともBesiegeのコードはそうなっている)
                 {
                     isFirstFrame = false;
                 }
                 else
                 {
-                    FixedUpdateBlock();
+                    if(StatMaster.isMP)
+                    {
+                        if(StatMaster.isHosting)//サーバーに入ってるので、ホストかローカルシミュのときのみ実行
+                        {
+                            FixedUpdateBlock();
+                        }
+                    }
+                    else
+                    {
+                        FixedUpdateBlock();//サーバーに入ってないので実行
+                    }
                 }
             }
         }
