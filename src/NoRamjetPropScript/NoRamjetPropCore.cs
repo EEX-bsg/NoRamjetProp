@@ -14,7 +14,7 @@ namespace NoRamjetPropNS
         }
         private void Start()
         {
-            Events.OnBlockPlaced += AddScript;
+            Events.OnBlockInit += AddScript;
         }
         private void AddScript(Block block)
         {

@@ -32,7 +32,6 @@ namespace NoRamjetPropNS
             propController = base.GetComponent<PropellorController>();//既存のプロペラコントローラーを取得
             liftNormalRot = new Vector3(0, 0, propController.upTransform.localEulerAngles.z);//ペラの水平角度を持ってくる Fで反転するから固定値ではダメ
             propController.AxisDrag = new Vector3(0, 0, 0);//既存プロペラコントローラーの空気抵抗をゼロにする
-            Debug.Log("start");
         }
         public void FixedUpdate()
         {
@@ -46,7 +45,7 @@ namespace NoRamjetPropNS
                 {
                     if(StatMaster.isMP)
                     {
-                        if(StatMaster.isHosting)//サーバーに入ってるので、ホストかローカルシミュのときのみ実行
+                        if(StatMaster.isHosting || StatMaster.isLocalSim)//サーバーに入ってるので、ホストかローカルシミュのときのみ実行
                         {
                             FixedUpdateBlock();
                         }
